@@ -108,45 +108,14 @@ void GameObjectPool::releasePoolable(APoolable* poolableObject)
 	//make a loop to find inactive object
 	//std::cout << usedObjects.size()<< std::endl;
 
-/*
-	if (!poolableObject->isEnabled())
-	{
-		
-
-	}
-	
-	for (int i = 0; i < this->usedObjects.size()-1; ++i)
-	{
-		if (!this->usedObjects[i]->isEnabled())
-		{
-
-		}
-	}*/
-
-	//this->usedObjects.(poolableObject);
-/*
-	poolableObject.Release();
-	poolableObject.gameObject.SetActive(false);
-	this.availableObjects.Add(poolableObject);*/
 }
 
 void GameObjectPool::releasePooableBatch(ObjectList objectList)
 {
-
-	/*
-	if (this.HasObjectAvailable(size)) {
-		APoolable[] poolableObjects = new APoolable[size];
-
-		for (int i = 0; i < size; i++) {
-			poolableObjects[i] = this.RequestPoolable();
-		}
-
-		return poolableObjects;
+	for (int i = 0; i < objectList.size(); ++i)
+	{
+		this->releasePoolable(objectList[i]);
 	}
-	else {
-		Debug.LogError("[GameObjectPool] Insufficient objects available in pool. Count is: " + this.availableObjects.Count + " while requested is " + size + "!");
-		return null;
-	}*/
 }
 
 ObjectList GameObjectPool::getAvailableObjects()
