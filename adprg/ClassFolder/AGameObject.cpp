@@ -15,6 +15,36 @@ AGameObject::~AGameObject()
 	{
 		delete this->sprite;
 	}
+	if (!childList.empty())
+	{
+		for (int i = 0; i < childList.size(); i++)
+		{
+
+			delete childList[i];
+
+		}
+		childList.clear();
+		childList.shrink_to_fit();
+	}
+	if (!componentList.empty())
+	{
+		for (int i = 0; i < componentList.size(); i++)
+		{
+			delete componentList[i];
+
+		}
+		componentList.clear();
+		componentList.shrink_to_fit();
+	}
+	
+}
+
+void AGameObject::clearGameObject()
+{
+	
+
+	
+	
 }
 
 void AGameObject::initialize()

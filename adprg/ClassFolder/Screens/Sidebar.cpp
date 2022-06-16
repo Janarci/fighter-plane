@@ -1,6 +1,7 @@
 #include "Sidebar.h"
 
 #include "MainMenuScreen.h"
+#include "PopUpScreen.h"
 #include "../TextureManager.h"
 #include "../../ApplicationManager.h"
 #include "../Components/Renderer.h"
@@ -24,7 +25,7 @@ void Sidebar::initialize()
 	sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 	this->getTransformable()->setScale(.3f, .1f);
 
-	Renderer* renderer = new Renderer("MainMenuScreen");
+	Renderer* renderer = new Renderer("SidebarPanel");
 	renderer->assignDrawable(sprite);
 	this->attachComponents(renderer);
 
@@ -59,7 +60,7 @@ void Sidebar::onButtonReleased(UIButton* button)
 {
 	if (button->getName() == "button_2" && !ApplicationManager::getInstance()->isPaused())
 	{
-		MainMenuScreen* PauseScreen = new MainMenuScreen("PauseScreen");
+		PopUpScreen* PauseScreen = new PopUpScreen("PauseScreen");
 		GameObjectManager::getInstance()->addObject(PauseScreen);
 		ApplicationManager::getInstance()->pauseApplication();
 	}

@@ -38,28 +38,39 @@ int GameObjectManager::activeObjects()
 
 void GameObjectManager::processInput(sf::Event event)
 {
-	for (int i = 0; i < gameObjectList.size(); i++)
+	if (!gameObjectList.empty())
 	{
-		gameObjectList[i]->processInput(event);
+		for (int i = 0; i < gameObjectList.size(); i++)
+		{
+			gameObjectList[i]->processInput(event);
+		}
 	}
 
 }
 
 void GameObjectManager::update(sf::Time deltaTime)
 {
-	for (int i = 0; i < gameObjectList.size(); i++)
+	
+
+	if (!gameObjectList.empty())
 	{
-		gameObjectList[i]->update(deltaTime);
+		for (int i = 0; i < gameObjectList.size(); i++)
+		{
+			gameObjectList[i]->update(deltaTime);
+		}
 	}
+	
 
 }
 
 void GameObjectManager::draw(sf::RenderWindow* window)
 {
-
-	for (int i = 0; i < gameObjectList.size(); i++)
+	if (!gameObjectList.empty())
 	{
-		gameObjectList[i]->draw(window, sf::RenderStates::Default);
+		for (int i = 0; i < gameObjectList.size(); i++)
+		{
+			gameObjectList[i]->draw(window, sf::RenderStates::Default);
+		}
 	}
 }
 
@@ -68,6 +79,8 @@ void GameObjectManager::addObject(AGameObject* gameObject)
 	gameObjectMap[gameObject->getName()] = gameObject;
 	gameObjectList.push_back(gameObject);
 	gameObject->initialize();
+	std::cout << "size: " << gameObjectList.size() << std::endl;
+
 }
 
 void GameObjectManager::deleteObject(AGameObject* gameObject)
@@ -87,4 +100,21 @@ void GameObjectManager::deleteObjectByName(std::string name)
 	{
 		deleteObject(object);
 	}
+}
+
+void GameObjectManager::deleteAllObjectsInScene()
+{
+	for (int i = 0; i < this->gameObjectList.size(); ++i)
+	{
+
+		delete this->gameObjectList[i];
+
+	}
+
+	gameObjectMap.clear();
+	gameObjectList.clear();
+	this->gameObjectList.shrink_to_fit();
+	std::cout << "size!!!!: " << gameObjectList.size() << std::endl;
+
+
 }

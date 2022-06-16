@@ -33,6 +33,7 @@ void TextureManager::loadAll()
 	loadTexture("avenger", "res/textures/Avenger.png");
 	loadTexture("ui_bg", "res/textures/f.png");
 	loadTexture("btn_normal", "res/textures/b_4.png");
+	loadTexture("main_menu_bg", "res/textures/TitleScreenBG.png");
 	sf::Texture* bgTex;
 	bgTex = getTexture("desert_bg");
 	bgTex->setRepeated(true);

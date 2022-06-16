@@ -12,6 +12,8 @@ class AGameObject
 public:
 	AGameObject(std::string name);
 	virtual ~AGameObject();
+	void clearGameObject();
+
 	virtual void initialize() = 0;
 	virtual void processInput(sf::Event event);
 	virtual void update(sf::Time deltaTime);

@@ -33,7 +33,6 @@ void EnemyAirplane::initialize()
 
 void EnemyAirplane::onRelease()
 {
-	//std::cout << "u made it here" << std::endl;
 
 }
 

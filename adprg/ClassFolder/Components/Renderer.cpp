@@ -1,5 +1,6 @@
 #include "Renderer.h"
 
+#include <iostream>
 #include <SFML/Graphics/Drawable.hpp>
 
 
@@ -12,12 +13,13 @@ Renderer::Renderer(std::string name): AComponent(name, AComponent::Renderer)
 }
 
 Renderer::~Renderer()
-{
+{/*
 	if (this->drawable != NULL)
 		delete this->drawable;
 
 	if (this->drawable != NULL)
-		delete this->targetWindow;
+		delete this->targetWindow;*/
+
 }
 
 void Renderer::assignTargetWindow(sf::RenderWindow* window)

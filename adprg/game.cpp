@@ -4,7 +4,10 @@
 #include "ApplicationManager.h"
 #include "FontManager.h"
 #include "ClassFolder/EmptyGameObject.h"
+#include "ClassFolder/SceneManager.h"
 #include "ClassFolder/Components/EnemySwarmHandler.h"
+#include "ClassFolder/Scenes/MainMenuScene.h"
+#include "ClassFolder/Scenes/Level1Scene.h"
 #include "ClassFolder/Screens/MainMenuScreen.h"
 #include "ClassFolder/Screens/Sidebar.h"
 
@@ -19,13 +22,26 @@ mPlayer()
 	//createEntity("bed_2", 300, 0);
 
 	FontManager::getInstance()->loadAll();
+
 	ApplicationManager::getInstance()->initialize(&mWindows);
+	//load sfx
 	SfxManager::getInstance()->loadAll();
 	createSound("gunfire");
 	createSound("explode1");
 	createSound("explode2");
 	createSound("launchMissile");
 
+	//register scenes
+	SceneManager::getInstance()->registerScene(new MainMenuScene); // MainMenuScene
+	SceneManager::getInstance()->registerScene(new Level1Scene); //Level1
+	//load main menu scene
+	SceneManager::getInstance()->loadScene("MainMenuScene");
+	//load first level
+	//SceneManager::getInstance()->loadScene("Level1");
+
+
+	/*
+	
 	BGObject* bgObject = new BGObject("BGOjbect");
 	GameObjectManager::getInstance()->addObject(bgObject);
 
@@ -46,7 +62,9 @@ mPlayer()
 
 	Sidebar* sidebar = new Sidebar("Sidebar");
 	GameObjectManager::getInstance()->addObject(sidebar);
-
+	
+	
+*/
 
 	//BGObject* bgOject = new BGObject("BGObject");
 	/* text stuff
@@ -76,12 +94,15 @@ void game::run()
 		TimeSinceLastUpdate += clock.restart();
 		while (TimeSinceLastUpdate > TimePerFrame)
 		{
+			
+
 			TimeSinceLastUpdate -= TimePerFrame;
 			processEvents(TimePerFrame);
 			update(TimePerFrame, mWindows);
 			render();
+
 		}
-		
+		SceneManager::getInstance()->checkLoadScene();
 	}
 }
 

@@ -1,4 +1,6 @@
 #include "UIButton.h"
+
+
 #include "../Components/Renderer.h"
 #include "../Components/UIButtonInputController.h"
 
@@ -11,6 +13,7 @@ UIButton::UIButton(std::string name, sf::Texture* normalTexture, sf::Texture* pr
 
 UIButton::~UIButton()
 {
+
 }
 
 void UIButton::initialize()

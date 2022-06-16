@@ -2,6 +2,7 @@
 
 #include "Sidebar.h"
 #include "../TextureManager.h"
+#include "../SceneManager.h"
 #include "../../ApplicationManager.h"
 #include "../Components/Renderer.h"
 #include "../../game.h"
@@ -13,14 +14,14 @@ MainMenuScreen::MainMenuScreen(std::string name) : AGameObject(name), ButtonList
 
 MainMenuScreen::~MainMenuScreen()
 {
-	delete this->button1;
-	delete this->button1_text;
+	//delete this->button1;
+	//delete this->button1_text;
 }
 
 void MainMenuScreen::initialize()
 {
 	sf::Sprite* sprite = new sf::Sprite();
-	sprite->setTexture(*TextureManager::getInstance()->getTexture("ui_bg"));
+	sprite->setTexture(*TextureManager::getInstance()->getTexture("main_menu_bg"));
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 
@@ -41,25 +42,25 @@ void MainMenuScreen::initialize()
 	this->button1 = new UIButton("button_1", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_normal"));
 	this->attachChild(this->button1);
 	button1->setPosition(-150, 150);
-	button1->getTransformable()->setScale(.7f, .7f);
+	button1->getTransformable()->setScale(1.0f, 1.0f);
 
 	this->button1_text = new UIText("button1_text");
 	this->button1->attachChild(button1_text);
-	this->button1_text->setPosition(0, -20);
-	this->button1_text->setSize(64);
-	button1_text->setText("Yes");
+	this->button1_text->setPosition(button1->getTransformable()->getOrigin().x, button1->getTransformable()->getOrigin().y);
+	this->button1_text->setSize(35);
+	button1_text->setText("Quit");
 	this->button1->setButtonListener(this);
 
 	this->button2 = new UIButton("button_2", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_normal"));
 	this->attachChild(this->button2);
 	button2->setPosition(150, 150);
-	button2->getTransformable()->setScale(.7f, .7f);
+	button2->getTransformable()->setScale(1.0f, 1.0f);
 
 	this->button2_text = new UIText("button2_text");
 	this->button2->attachChild(button2_text);
-	this->button2_text->setPosition(0, -20);
-	this->button2_text->setSize(64);
-	button2_text->setText("No");
+	this->button2_text->setPosition(button2->getTransformable()->getOrigin().x, button2->getTransformable()->getOrigin().y);
+	this->button2_text->setSize(35);
+	button2_text->setText("Play Game");
 	this->button2->setButtonListener(this);
 }
 
@@ -72,13 +73,18 @@ void MainMenuScreen::onButtonReleased(UIButton* button)
 {
 	if (button->getName() == "button_1")
 	{
-		ApplicationManager::getInstance()->applicationQuit();
+		//ApplicationManager::getInstance()->applicationQuit();
+		SceneManager::getInstance()->loadScene("MainMenuScene");
+
+		//SceneManager::getInstance()->loadScene("MainMenuScreen");
 	}
 
 	if (button->getName() == "button_2")
 	{
-		GameObjectManager::getInstance()->deleteObjectByName("PauseScreen");
-		ApplicationManager::getInstance()->resumeApplication();
+		//GameObjectManager::getInstance()->deleteObjectByName("MainMenuScreen");
+
+		//SceneManager::getInstance()->unloadScene();
+		SceneManager::getInstance()->loadScene("Level1");
 	}
 
 }

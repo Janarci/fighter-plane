@@ -154,11 +154,13 @@
     <ClCompile Include="ClassFolder\Components\EnemySwarmHandler.cpp" />
     <ClCompile Include="ClassFolder\EmptyGameObject.cpp" />
     <ClCompile Include="ClassFolder\ObjectPooling\APoolable.cpp" />
+    <ClCompile Include="ClassFolder\Scenes\Ascene.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="ClassFolder\GameObjectManager.cpp" />
     <ClCompile Include="ClassFolder\Components\GenericInputController.cpp" />
     <ClCompile Include="ClassFolder\ObjectPooling\GameObjectPool.cpp" />
+    <ClCompile Include="ClassFolder\Scenes\Level1Scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ClassFolder\TextureManager.cpp" />
     <ClCompile Include="ClassFolder\SfxManager.cpp" />
@@ -171,10 +173,14 @@
     <ClCompile Include="ClassFolder\Components\UIButtonInputController.cpp" />
     <ClCompile Include="ClassFolder\Screens\Sidebar.cpp" />
     <ClCompile Include="ClassFolder\ObjectPoolHolder.cpp" />
+    <ClCompile Include="ClassFolder\SceneManager.cpp" />
+    <ClCompile Include="ClassFolder\Scenes\MainMenuScene.cpp" />
+    <ClCompile Include="ClassFolder\Screens\PopUpScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClassFolder\ObjectPooling\APoolable.h" />
     <ClInclude Include="ApplicationManager.h" />
+    <ClInclude Include="ClassFolder\Scenes\AScene.h" />
     <ClInclude Include="ClassFolder\UI\ButtonListener.h" />
     <ClInclude Include="ClassFolder\Components\BGMovement.h" />
     <ClInclude Include="ClassFolder\Components\AComponent.h" />
@@ -202,6 +208,10 @@
     <ClInclude Include="ClassFolder\Screens\Sidebar.h" />
     <ClInclude Include="ClassFolder\ObjectPooling\GameObjectPool.h" />
     <ClInclude Include="ClassFolder\ObjectPoolHolder.h" />
+    <ClInclude Include="ClassFolder\SceneManager.h" />
+    <ClInclude Include="ClassFolder\Scenes\MainMenuScene.h" />
+    <ClInclude Include="ClassFolder\Scenes\Level1Scene.h" />
+    <ClInclude Include="ClassFolder\Screens\PopUpScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\textures\Avenger.png" />
@@ -244,6 +254,7 @@
     <Image Include="res\textures\Eagle.png" />
     <Image Include="res\textures\f.png" />
     <Image Include="res\textures\Raptor.png" />
+    <Image Include="res\textures\TitleScreenBG.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\fonts\Sansation.ttf" />

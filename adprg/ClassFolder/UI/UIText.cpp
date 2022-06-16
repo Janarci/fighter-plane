@@ -10,6 +10,7 @@ UIText::UIText(std::string name) : AGameObject(name)
 UIText::~UIText()
 {
 	delete this->text;
+
 }
 
 void UIText::initialize()
