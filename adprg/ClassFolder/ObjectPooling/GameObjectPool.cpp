@@ -13,7 +13,7 @@ GameObjectPool::GameObjectPool(std::string tag, APoolable* poolableCopy, int poo
 
 GameObjectPool::~GameObjectPool()
 {
-	delete this->objectCopy;
+	//delete this->objectCopy;
 	this->objectCopy = NULL;
 	this->parent = NULL;
 
@@ -24,7 +24,6 @@ void GameObjectPool::initialize()
 	for (int i = 0; i < this->maxPoolSize; ++i)
 	{
 		APoolable* poolableObject = this->objectCopy->clone();
-
 		if (this->parent != NULL)
 		{
 			this->parent->attachChild(poolableObject);
@@ -55,14 +54,14 @@ APoolable* GameObjectPool::requestPoolable()
 		this->availableObjects.erase(this->availableObjects.begin() + this->availableObjects.size() - 1);
 		this->usedObjects.push_back(poolableObject);
 
-		std::cout << "Requested object. Available: " << this->availableObjects.size() << " || Used: " << this->usedObjects.size() << std::endl;
+		//std::cout << "Requested object. Available: " << this->availableObjects.size() << " || Used: " << this->usedObjects.size() << std::endl;
 		this->setEnabled(poolableObject, true);
 		return poolableObject;
 	}
 
 	else
 	{
-		std::cout << "No more poolable " << this->objectCopy->getName() << " available" << std::endl;
+		//std::cout << "No more poolable " << this->objectCopy->getName() << " available" << std::endl;
 		return NULL;
 	}
 }
@@ -90,7 +89,6 @@ ObjectList GameObjectPool::requestPoolableBatch(int size)
 
 void GameObjectPool::releasePoolable(APoolable* poolableObject)
 {
-	test++;
 	this->setEnabled(poolableObject, false);
 
 	for (int i = 0; i < usedObjects.size(); ++i)

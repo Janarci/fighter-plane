@@ -5,8 +5,11 @@
 
 #include "TextureManager.h"
 #include "Components/EnemyBehavior.h"
+#include "Physics/Collider.h"
+#include "Physics/CollisionListener.h"
+
 class EnemyAirplane :
-    public APoolable
+    public APoolable, public CollisionListener
 {
 
 public:
@@ -16,12 +19,17 @@ public:
     void initialize() override;/**/
     void onRelease() override;
     void onActivate() override;
- 
+
+    void onCollisionEnter(AGameObject* gameObject) override;
+    void onCollisionExit(AGameObject* gameObject) override;
+
 	APoolable* clone();
    
 
 private:
+    int test = 0;
     sf::Sprite* sprite = new sf::Sprite();
+    Collider* collider;
     int SPAWN_RANGE = 300;
     int counter = 0;
 };

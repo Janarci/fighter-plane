@@ -7,7 +7,7 @@ class AGameObject;
 class AComponent
 {
 public:
-	enum ComponentType { NotSet = -1, Script = 0, Renderer = 1, Input = 2, Sound = 3};
+	enum ComponentType { NotSet = -1, Script = 0, Renderer = 1, Input = 2, Sound = 3, Physics = 4};
 
 	AComponent(std::string name, ComponentType type);
 	virtual  ~AComponent();

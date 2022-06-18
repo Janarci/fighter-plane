@@ -94,14 +94,17 @@ void game::run()
 		TimeSinceLastUpdate += clock.restart();
 		while (TimeSinceLastUpdate > TimePerFrame)
 		{
-			
-
 			TimeSinceLastUpdate -= TimePerFrame;
 			processEvents(TimePerFrame);
 			update(TimePerFrame, mWindows);
+
 			render();
 
+			
+
 		}
+
+		
 		SceneManager::getInstance()->checkLoadScene();
 	}
 }

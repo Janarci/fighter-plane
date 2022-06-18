@@ -11,7 +11,8 @@ public:
     void perform() override;
 
 private:
-
+    float ticks = 0;
+    float bulletSpawnInterval = 0.3f;
 
 
 };

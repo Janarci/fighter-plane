@@ -40,7 +40,7 @@ void PopUpScreen::initialize()
 	this->quitText->setSize(35);
 	this->quitText->setPosition(40, 0);
 
-	this->button1 = new UIButton("button_1", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_normal"));
+	this->button1 = new UIButton("button_1", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_pressed"));
 	this->attachChild(this->button1);
 	button1->setPosition(-150, 150);
 	button1->getTransformable()->setScale(.7f, .7f);
@@ -52,7 +52,7 @@ void PopUpScreen::initialize()
 	button1_text->setText("Yes");
 	this->button1->setButtonListener(this);
 
-	this->button2 = new UIButton("button_2", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_normal"));
+	this->button2 = new UIButton("button_2", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_pressed"));
 	this->attachChild(this->button2);
 	button2->setPosition(150, 150);
 	button2->getTransformable()->setScale(.7f, .7f);
@@ -84,10 +84,10 @@ void PopUpScreen::onButtonReleased(UIButton* button)
 
 	if (button->getName() == "button_2")
 	{
-		SceneManager::getInstance()->loadScene("Level1");
+		//SceneManager::getInstance()->loadScene("Level1");
 
-		//GameObjectManager::getInstance()->deleteObjectByName("PauseScreen");
-		//ApplicationManager::getInstance()->resumeApplication();
+		GameObjectManager::getInstance()->deleteObjectByName("PauseScreen");
+		ApplicationManager::getInstance()->resumeApplication();
 	}
 
 }

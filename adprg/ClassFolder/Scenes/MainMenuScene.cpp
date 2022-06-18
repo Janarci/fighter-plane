@@ -23,4 +23,6 @@ void MainMenuScene::onLoadObjects()
 	MainMenuScreen* menuScreen = new MainMenuScreen("MainMenuScreen");
 	this->registerObject(menuScreen);
 
+
+
 }

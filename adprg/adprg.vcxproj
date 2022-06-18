@@ -142,6 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClassFolder\Components\AirplaneSupportMovement.cpp" />
+    <ClCompile Include="ClassFolder\AirplaneSupport.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="ClassFolder\Components\BGMovement.cpp" />
     <ClCompile Include="ClassFolder\Components\AComponent.cpp" />
@@ -155,6 +157,8 @@
     <ClCompile Include="ClassFolder\EmptyGameObject.cpp" />
     <ClCompile Include="ClassFolder\ObjectPooling\APoolable.cpp" />
     <ClCompile Include="ClassFolder\Scenes\Ascene.cpp" />
+    <ClCompile Include="ClassFolder\Physics\Collider.cpp" />
+    <ClCompile Include="ClassFolder\Physics\CollisionListener.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="ClassFolder\GameObjectManager.cpp" />
@@ -176,8 +180,13 @@
     <ClCompile Include="ClassFolder\SceneManager.cpp" />
     <ClCompile Include="ClassFolder\Scenes\MainMenuScene.cpp" />
     <ClCompile Include="ClassFolder\Screens\PopUpScreen.cpp" />
+    <ClCompile Include="ClassFolder\Physics\PhysicsManager.cpp" />
+    <ClCompile Include="ClassFolder\Projectile\ProjectileMovement.cpp" />
+    <ClCompile Include="ClassFolder\Projectile\ProjectileObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClassFolder\Components\AirplaneSupportMovement.h" />
+    <ClInclude Include="ClassFolder\AirplaneSupport.h" />
     <ClInclude Include="ClassFolder\ObjectPooling\APoolable.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="ClassFolder\Scenes\AScene.h" />
@@ -192,6 +201,8 @@
     <ClInclude Include="ClassFolder\EnemyAirplane.h" />
     <ClInclude Include="ClassFolder\Components\EnemySwarmHandler.h" />
     <ClInclude Include="ClassFolder\EmptyGameObject.h" />
+    <ClInclude Include="ClassFolder\Physics\Collider.h" />
+    <ClInclude Include="ClassFolder\Physics\CollisionListener.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="ClassFolder\TextureManager.h" />
@@ -212,6 +223,9 @@
     <ClInclude Include="ClassFolder\Scenes\MainMenuScene.h" />
     <ClInclude Include="ClassFolder\Scenes\Level1Scene.h" />
     <ClInclude Include="ClassFolder\Screens\PopUpScreen.h" />
+    <ClInclude Include="ClassFolder\Physics\PhysicsManager.h" />
+    <ClInclude Include="ClassFolder\Projectile\ProjectileMovement.h" />
+    <ClInclude Include="ClassFolder\Projectile\ProjectileObject.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\textures\Avenger.png" />
@@ -240,6 +254,7 @@
     <Image Include="res\textures\boxGift_0005.png" />
     <Image Include="res\textures\boxGift_0006.png" />
     <Image Include="res\textures\boxGift_0007.png" />
+    <Image Include="res\textures\Bullet.png" />
     <Image Include="res\textures\b_4.png" />
     <Image Include="res\textures\b_5.png" />
     <Image Include="res\textures\coin0000.png" />

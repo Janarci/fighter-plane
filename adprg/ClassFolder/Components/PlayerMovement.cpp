@@ -4,6 +4,8 @@
 
 #include "PlayerInputController.h"
 #include "../AirplanePlayer.h"
+#include "../ObjectPooling/GameObjectPool.h"
+#include "../ObjectPoolHolder.h"
 
 
 PlayerMovement::PlayerMovement(std::string name) : AComponent(name, Script)
@@ -43,5 +45,15 @@ void PlayerMovement::perform()
 	else if (inputController->isLeft()) {
 		offset.x += inputController->SPEED_MULT;
 		playerTransformable->move(offset * deltaTime.asSeconds());
+	}
+
+	this->ticks += this->deltaTime.asSeconds();
+	if (inputController->hasFired() && this->ticks > bulletSpawnInterval)
+	{
+		GameObjectPool* projectilePool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::PROJECTILE_POOL_TAG);
+		this->ticks = 0.0f;
+		std::cout << "adding bullet" << std::endl;
+		projectilePool->requestPoolable();
+
 	}
 }

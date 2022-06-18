@@ -50,6 +50,11 @@ void PlayerInputController::perform()
 
 		std::cout << "d" << std::endl;
 	}
+	if (key == (sf::Keyboard::Space))
+	{
+		this->fire = keyFlag;
+		std::cout << "Fire!" << std::endl;
+	}
 }
 
 bool PlayerInputController::isUp()
@@ -75,4 +80,9 @@ bool PlayerInputController::isRight()
 bool PlayerInputController::isMoving()
 {
 	return this->moving;
+}
+
+bool PlayerInputController::hasFired()
+{
+	return this->fire;
 }

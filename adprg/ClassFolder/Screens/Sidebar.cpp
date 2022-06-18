@@ -34,7 +34,7 @@ void Sidebar::initialize()
 	this->setPosition(game::WINDOW_WIDTH-150, game::WINDOW_HEIGHT-50);
 
 
-	this->button2 = new UIButton("button_2", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_normal"));
+	this->button2 = new UIButton("button_2", TextureManager::getInstance()->getTexture("btn_normal"), TextureManager::getInstance()->getTexture("btn_pressed"));
 	this->attachChild(this->button2);
 	button2->setPosition(150, 0);
 	button2->getTransformable()->setScale(1.0f, 4.0f);

@@ -11,6 +11,7 @@ EnemySwarmHandler::EnemySwarmHandler(int numEnemies, std::string name) : ACompon
 	enemyPool->initialize();
 	ObjectPoolHolder::getInstance()->registerObjectPool(enemyPool);
 
+
 }
 
 EnemySwarmHandler::~EnemySwarmHandler()

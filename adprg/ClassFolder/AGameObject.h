@@ -32,8 +32,10 @@ public:
 	//std::vector<AComponent*> getComponentsOfTypeRecursive(AComponent::ComponentType type);
 
 	sf::Transformable* getTransformable();
-	sf::Sprite* getSprite();
 
+	sf::Transform getGlobalTransform();
+
+	sf::Sprite* getSprite();
 	AGameObject* getParent();
 
 	void setEnabled(bool flag);
@@ -56,4 +58,3 @@ private:
 
 
 };
-

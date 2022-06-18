@@ -11,6 +11,7 @@ class ObjectPoolHolder: sf::NonCopyable
 public:
 
 	static std::string ENEMY_POOL_TAG;
+	static std::string PROJECTILE_POOL_TAG;
 
 	static ObjectPoolHolder* getInstance();
 
@@ -22,10 +23,10 @@ public:
 
 private:
 	ObjectPoolHolder() {}
+	PoolMap poolMap;
 
 	static ObjectPoolHolder* sharedInstance;
 
-	PoolMap poolMap;
 
 };
 

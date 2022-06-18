@@ -1,7 +1,10 @@
 #include "EnemyAirplane.h"
 
+#include "ObjectPoolHolder.h"
+#include "Physics/PhysicsManager.h"
 
-EnemyAirplane::EnemyAirplane(std::string name) : APoolable(name)
+
+EnemyAirplane::EnemyAirplane(std::string name) : APoolable(name), CollisionListener()
 {
 }
 
@@ -29,10 +32,17 @@ void EnemyAirplane::initialize()
 	this->attachComponents(behavior);
 	behavior->configure(1.0f);
 
+	this->collider = new Collider("EnemyCollider");
+
+	collider->setLocalBounds(sprite->getGlobalBounds());
+	collider->setCollisionListener(this);
+	this->attachComponents(collider);
+
 }
 
 void EnemyAirplane::onRelease()
 {
+	PhysicsManager::getInstance()->untrackObject(this->collider);
 
 }
 
@@ -42,6 +52,25 @@ void EnemyAirplane::onActivate()
 	behavior->reset();
 	this->setPosition(game::WINDOW_WIDTH / 2, -0);
 	this->getTransformable()->move(rand() % SPAWN_RANGE - rand() % SPAWN_RANGE, 0);
+	PhysicsManager::getInstance()->trackObject(this->collider);
+
+}
+
+void EnemyAirplane::onCollisionEnter(AGameObject* contact)
+{
+	
+	if (contact->getName().find("projectile") != std::string::npos)
+	{
+		GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
+		enemyPool->releasePoolable(this);
+
+	}
+
+}
+
+void EnemyAirplane::onCollisionExit(AGameObject* contact)
+{
+	std::cout << "releasing" << std::endl;
 
 }
 
@@ -52,3 +81,4 @@ APoolable* EnemyAirplane::clone()
 	return copyObject;
 
 }
+

@@ -1,5 +1,7 @@
 #include "GameObjectManager.h"
 
+#include "ObjectPoolHolder.h"
+
 
 GameObjectManager* GameObjectManager::sharedInstance = NULL;
 
@@ -114,6 +116,10 @@ void GameObjectManager::deleteAllObjectsInScene()
 	gameObjectMap.clear();
 	gameObjectList.clear();
 	this->gameObjectList.shrink_to_fit();
+
+	
+	//std::cout << "deleted all poolmap size: " << ObjectPoolHolder::getInstance()->poolMap.size() << std::endl;
+
 	std::cout << "size!!!!: " << gameObjectList.size() << std::endl;
 
 

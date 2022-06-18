@@ -25,7 +25,6 @@ public:
 	std::string getTag();
 
 private:
-	int test = 0;
 	std::string tag;
 	APoolable* objectCopy = NULL;
 	AGameObject* parent = NULL;
