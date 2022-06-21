@@ -12,10 +12,10 @@ void BGObject::initialize()
 {
 
 	sprite = new sf::Sprite();
-	sprite->setTexture(*TextureManager::getInstance()->getTexture("desert_bg"));
+	sprite->setTexture(*TextureManager::getInstance()->getTexture("racetrack_bg"));
 	sf::Vector2u textureSoze = this->sprite->getTexture()->getSize();
 
-	sprite->setTextureRect(sf::IntRect(0, 0, game::WINDOW_WIDTH, game::WINDOW_HEIGHT * 8));
+	sprite->setTextureRect(sf::IntRect(0, 0, 800, game::WINDOW_HEIGHT * 8));
 	sprite->setPosition(0, -game::WINDOW_HEIGHT * 7);
 
 	Renderer* renderer = new Renderer("BGSprite");

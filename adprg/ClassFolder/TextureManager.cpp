@@ -33,9 +33,13 @@ void TextureManager::loadAll()
 	loadTexture("avenger", "res/textures/Avenger.png");
 	loadTexture("ui_bg", "res/textures/f.png");
 	loadTexture("btn_normal", "res/textures/b_4.png");
+	loadTexture("racetrack_bg", "res/textures/racetrack.png");
 	sf::Texture* bgTex;
+	sf::Texture* bgTex2;
 	bgTex = getTexture("desert_bg");
+	bgTex2 = getTexture("racetrack_bg");
 	bgTex->setRepeated(true);
+	bgTex2->setRepeated(true);
 }
 
 sf::Texture* TextureManager::getTexture(std::string key)

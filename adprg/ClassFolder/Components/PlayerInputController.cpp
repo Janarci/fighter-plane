@@ -14,7 +14,7 @@ void PlayerInputController::perform()
 {
 
 	bool keyFlag = false;
-	if(event.type == sf::Event::KeyPressed)
+	if (event.type == sf::Event::KeyPressed)
 	{
 		keyFlag = true;
 	}
@@ -26,34 +26,53 @@ void PlayerInputController::perform()
 	sf::Keyboard::Key key = event.key.code;
 	if (key == (sf::Keyboard::W))
 	{
-		//std::cout << "w" << std::endl;
+		this->moveUp = keyFlag;
+		this->moving = keyFlag;
 	}
 	if (key == (sf::Keyboard::A))
 	{
-		//std::cout << "a" << std::endl;
+		this->moveRight = keyFlag;
+		this->moving = keyFlag;
+
+		std::cout << "a" << std::endl;
 	}
 	if (key == (sf::Keyboard::S))
 	{
-		//std::cout << "s" << std::endl;
+		this->moveDown = keyFlag;
+		this->moving = keyFlag;
+
+		std::cout << "s" << std::endl;
 	}
 	if (key == (sf::Keyboard::D))
 	{
-		//std::cout << "d" << std::endl;
+		this->moveLeft = keyFlag;
+		this->moving = keyFlag;
+
+		std::cout << "d" << std::endl;
 	}
 }
 
-void PlayerInputController::isUp()
+bool PlayerInputController::isUp()
 {
+	return this->moveUp;
 }
 
-void PlayerInputController::isDown()
+bool PlayerInputController::isDown()
 {
+	return this->moveDown;
 }
 
-void PlayerInputController::isLeft()
+bool PlayerInputController::isLeft()
 {
+	return this->moveLeft;
 }
 
-void PlayerInputController::isRight()
+bool PlayerInputController::isRight()
 {
+	return this->moveRight;
+}
+
+bool PlayerInputController::isMoving()
+{
+	return this->moving;
 }

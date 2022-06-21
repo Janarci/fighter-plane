@@ -313,6 +313,9 @@
     <Image Include="res\textures\Avenger.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\racetrack.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\fonts\Sansation.ttf" />

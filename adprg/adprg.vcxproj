@@ -243,6 +243,7 @@
     <Image Include="res\textures\Desert.png" />
     <Image Include="res\textures\Eagle.png" />
     <Image Include="res\textures\f.png" />
+    <Image Include="res\textures\racetrack.png" />
     <Image Include="res\textures\Raptor.png" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ public:
 	game();
 	void run();
 	float PlayerSpeed = 300.0f;
-	static const int WINDOW_WIDTH = 800;
+	static const int WINDOW_WIDTH = 1400;
 	static const int WINDOW_HEIGHT = 800;
 
 private:

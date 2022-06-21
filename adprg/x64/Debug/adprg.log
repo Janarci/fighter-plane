@@ -1,2 +1,97 @@
-﻿  GameObjectPool.cpp
+﻿  AGameObject.cpp
+  AirplanePlayer.cpp
+D:\C++\adprg\adprg\ClassFolder\AirplanePlayer.cpp(26,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\AirplanePlayer.cpp(26,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  BGObject.cpp
+  AComponent.cpp
+  BGMovement.cpp
+  EnemyBehavior.cpp
+  EnemySwarmHandler.cpp
+  GenericInputController.cpp
+  PlayerInputController.cpp
+  PlayerMovement.cpp
+  Renderer.cpp
+  UIButtonInputController.cpp
+D:\C++\adprg\adprg\ClassFolder\Components\UIButtonInputController.cpp(26,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\C++\adprg\adprg\ClassFolder\Components\UIButtonInputController.cpp(26,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  EmptyGameObject.cpp
+  EnemyAirplane.cpp
+D:\C++\adprg\adprg\ClassFolder\EnemyAirplane.cpp(18,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\EnemyAirplane.cpp(18,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\EnemyAirplane.cpp(21,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\C++\adprg\adprg\ClassFolder\EnemyAirplane.cpp(45,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameObjectManager.cpp
+D:\C++\adprg\adprg\ClassFolder\GameObjectManager.cpp(36,30): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  ObjectPoolHolder.cpp
+  APoolable.cpp
+  GameObjectPool.cpp
+  MainMenuScreen.cpp
+D:\C++\adprg\adprg\ClassFolder\Screens\MainMenuScreen.cpp(25,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\Screens\MainMenuScreen.cpp(25,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Sidebar.cpp
+D:\C++\adprg\adprg\ClassFolder\Screens\Sidebar.cpp(24,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\Screens\Sidebar.cpp(24,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Generating Code...
+  Compiling...
+  TextureManager.cpp
+  UIButton.cpp
+D:\C++\adprg\adprg\ClassFolder\UI\UIButton.cpp(21,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\UI\UIButton.cpp(21,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\C++\adprg\adprg\ClassFolder\UI\UIButton.cpp(57,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  UIText.cpp
+D:\C++\adprg\adprg\FontManager.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  game.cpp
+D:\C++\adprg\adprg\FontManager.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\C++\adprg\adprg\game.cpp(35,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  Generating Code...
+  LINK : D:\C++\adprg\x64\Debug\adprg.exe not found or not built by the last incremental link; performing full link
   adprg.vcxproj -> D:\C++\adprg\x64\Debug\adprg.exe
